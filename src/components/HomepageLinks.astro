@@ -1,5 +1,5 @@
 ---
-import EmojiStoreLink from "./IconLink.astro";
+import IconLink from "./IconLink.astro";
 
 const stores = {
     chrome: {
@@ -25,21 +25,15 @@ const stores = {
 };
 ---
 
-<>
-    <ul>
-        {
-            Object.entries(stores).map(([browser, data]) => (
-                <li>
-                    <EmojiStoreLink
-                        text={browser}
-                        href={data.href}
-                        icon={data.icon}
-                    />
-                </li>
-            ))
-        }
-    </ul>
-</>
+<ul>
+    {
+        Object.entries(stores).map(([browser, data]) => (
+            <li>
+                <IconLink text={browser} href={data.href} icon={data.icon} />
+            </li>
+        ))
+    }
+</ul>
 
 <style>
     ul {

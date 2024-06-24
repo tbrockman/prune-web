@@ -7,6 +7,7 @@ import IconLink from "../components/IconLink.astro";
 <Layout title="prune | trim your garden of tabs ✂️">
 	<nav></nav>
 	<main>
+		<div class="filler"></div>
 		<section class="hero">
 			<img
 				src="/src/assets/images/prune-banner.svg"
@@ -22,18 +23,19 @@ import IconLink from "../components/IconLink.astro";
 				</div>
 			</div>
 		</section>
-		<footer class="footer">
-			<p>
-				bugs? features? code? -> <IconLink
-					component={"span"}
-					icon="🐙"
-					href="https://github.com/tbrockman/prune"
-					text="github"
-				/>
-			</p>
-			<p>made with 🫗🌞🪴 by <a href="https://theo.lol">theo</a></p>
-		</footer>
 	</main>
+	<footer class="footer">
+		<p></p>
+		<p>
+			made with 🫗🌞🪴 by <a href="https://theo.lol">theo</a> | bugs? features?
+			code? -> <IconLink
+				component={"span"}
+				icon="🐙"
+				href="https://github.com/tbrockman/prune"
+				text="github"
+			/>
+		</p>
+	</footer>
 </Layout>
 
 <style>
@@ -58,11 +60,18 @@ import IconLink from "../components/IconLink.astro";
 
 	.footer {
 		padding: 0 1rem;
-		flex: 1;
 		display: flex;
 		flex-direction: column;
 		align-self: flex-start;
 		justify-content: flex-end;
+	}
+
+	.filler {
+		flex: 1;
+	}
+
+	.hero {
+		/* padding-top: calc(25% - 2rem); */
 	}
 
 	.hero-sub {
