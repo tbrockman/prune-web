@@ -7,31 +7,40 @@ import IconLink from "../components/IconLink.astro";
 <Layout title="prune | trim your garden of tabs ✂️">
 	<nav></nav>
 	<main>
-		<div class="filler"></div>
-		<section class="hero">
-			<img src="/images/prune-banner.svg" alt="prune your tabs" />
-			<div class="hero-sub">
-				<p>
-					a simple browser extension to help you trim your garden of
-					tabs.
-				</p>
-				<div class="download-links">
-					<HomepageLinks />
+		<div class="left-filler"></div>
+		<div class="hero-container">
+			<div class="top-filler"></div>
+			<section class="hero">
+				<img src="/images/prune-banner.svg" alt="prune your tabs" />
+				<div class="hero-sub">
+					<p>
+						a simple browser extension to help you your trim garden
+						of tabs.
+					</p>
+					<div class="download-links">
+						<HomepageLinks />
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+			<div class="bottom-filler"></div>
+		</div>
+		<div class="right-filler"></div>
 	</main>
-	<footer class="footer">
-		<p></p>
-		<p>
-			made with 🫗🌞🪴 by <a href="https://theo.lol">theo</a> | bugs? features?
-			code? -> <IconLink
-				component={"span"}
-				icon="🐙"
-				href="https://github.com/tbrockman/prune"
-				text="github"
-			/>
-		</p>
+	<footer>
+		<div class="left-filler"></div>
+		<div class="footer">
+			<p></p>
+			<p>
+				made with 🫗🌞🪴 by <a href="https://theo.lol">theo</a> | bugs? features?
+				code? -> <IconLink
+					component={"span"}
+					icon="🐙"
+					href="https://github.com/tbrockman/prune"
+					text="github"
+				/>
+			</p>
+		</div>
+		<div class="right-filler"></div>
 	</footer>
 </Layout>
 
@@ -48,11 +57,19 @@ import IconLink from "../components/IconLink.astro";
 		display: flex;
 		align-items: center;
 		flex: 1;
-		width: calc(100% - 2rem);
 		font-size: 20px;
 		line-height: 1.6;
-		flex-direction: column;
-		max-width: 600px;
+		flex-direction: row;
+	}
+
+	footer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		/* background-color: var(--color-background); */
+		color: var(--color-text-tertiary);
+		font-size: 14px;
 	}
 
 	.footer {
@@ -63,12 +80,32 @@ import IconLink from "../components/IconLink.astro";
 		justify-content: flex-end;
 	}
 
-	.filler {
+	.left-filler {
+		flex: 1;
+	}
+
+	.right-filler {
+		flex: 4;
+	}
+
+	.top-filler {
+		flex: 4;
+	}
+
+	.bottom-filler {
 		flex: 1;
 	}
 
 	.hero {
 		/* padding-top: calc(25% - 2rem); */
+	}
+
+	.hero-container {
+		display: flex;
+		max-width: 600px;
+		width: calc(100% - 2rem);
+		height: 100%;
+		flex-direction: column;
 	}
 
 	.hero-sub {
