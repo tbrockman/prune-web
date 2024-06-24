@@ -1,0 +1,65 @@
+---
+import EmojiStoreLink from "./IconLink.astro";
+
+const stores = {
+    chrome: {
+        href: "https://chrome.google.com/webstore/detail/prune/gblddboefgbljpngfhgekbpoigikbenh",
+        icon: "🌈",
+    },
+    firefox: {
+        href: "https://addons.mozilla.org/en-US/firefox/addon/prune-tabs/",
+        icon: "🦊",
+    },
+    safari: {
+        href: "https://apps.apple.com/us/app/prune-your-tabs/id6503263467",
+        icon: "🧭",
+    },
+    edge: {
+        href: "https://microsoftedge.microsoft.com/addons/detail/ideengngoaeoamicacnpipkdmpledphd",
+        icon: "🌊",
+    },
+    opera: {
+        href: "https://addons.opera.com/en/extensions/details/prune/",
+        icon: "🎭",
+    },
+};
+---
+
+<>
+    <ul>
+        {
+            Object.entries(stores).map(([browser, data]) => (
+                <li>
+                    <EmojiStoreLink
+                        text={browser}
+                        href={data.href}
+                        icon={data.icon}
+                    />
+                </li>
+            ))
+        }
+    </ul>
+</>
+
+<style>
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        list-style: none;
+        margin-left: -3ch;
+        clip-path: inset(0 0 0 3ch);
+        margin-top: 2rem;
+    }
+    li {
+        display: flex;
+        padding-left: 1ch;
+    }
+    li::before {
+        content: "| ";
+        display: inline-block;
+        margin-right: 1ch;
+        width: 1ch;
+        text-align: center;
+    }
+</style>

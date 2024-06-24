@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HomepageLinks from "../components/HomepageLinks.astro";
+import IconLink from "../components/IconLink.astro";
+---
+
+<Layout title="prune | trim your garden of tabs ✂️">
+	<nav></nav>
+	<main>
+		<section class="hero">
+			<img
+				src="/src/assets/images/prune-banner.svg"
+				alt="prune your tabs"
+			/>
+			<div class="hero-sub">
+				<p>
+					a simple browser extension to help you trim your garden of
+					tabs.
+				</p>
+				<div class="download-links">
+					<HomepageLinks />
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<p>
+				bugs? features? code? -> <IconLink
+					component={"span"}
+					icon="🐙"
+					href="https://github.com/tbrockman/prune"
+					text="github"
+				/>
+			</p>
+			<p>made with 🫗🌞🪴 by <a href="https://theo.lol">theo</a></p>
+		</footer>
+	</main>
+</Layout>
+
+<style>
+	:global(:root) {
+		--color-text-primary: #333;
+		--color-text-secondary: rgb(49, 28, 71);
+		--color-text-tertiary: #999;
+		--color-background: #f8f8f8;
+		--color-accent: #ff6b81;
+	}
+
+	main {
+		display: flex;
+		align-items: center;
+		flex: 1;
+		width: calc(100% - 2rem);
+		font-size: 20px;
+		line-height: 1.6;
+		flex-direction: column;
+		max-width: 600px;
+	}
+
+	.footer {
+		padding: 0 1rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-self: flex-start;
+		justify-content: flex-end;
+	}
+
+	.hero-sub {
+		padding: 0 1rem;
+	}
+
+	.download-links {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 2rem;
+	}
+</style>

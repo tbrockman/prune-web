@@ -1,0 +1,21 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+interface Props {
+    text: string;
+    icon: string | JSX.Element;
+    href: string;
+    component?: any;
+}
+
+const { text: name, icon, href, component = "div" } = Astro.props;
+const Element = component;
+---
+
+<Element>
+    <a href={href} target="_blank" rel="noopener noreferrer">
+        {icon}&nbsp;{name}
+    </a>
+</Element>
+
+<style></style>
